@@ -17,7 +17,8 @@ import { Order } from './schemas/Order';
 import { Role } from './schemas/Role';
 import { permissionsList } from './schemas/fields';
 
-const databaseURL = process.env.DATABASE_URL;
+const databaseURL =
+  process.env.DATABASE_URL || 'mongodb://localhost:27017/e-commerce-site';
 
 const sessionConfig = {
   maxAge: 60 * 60 * 24 * 360,
