@@ -2,27 +2,27 @@ import { checkbox } from '@keystone-next/fields';
 
 export const permissionFields = {
   canManageProducts: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can Update and delete any product',
   }),
   canSeeOtherUsers: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can query other users',
   }),
   canManageUsers: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can Edit other users',
   }),
   canManageRoles: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can CRUD roles',
   }),
   canManageCart: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can see and manage cart and cart items',
   }),
   canManageOrders: checkbox({
-    defaultValue: false,
+    defaultValue: true,
     label: 'User can see and manage orders',
   }),
 };
