@@ -74,7 +74,7 @@ export default withAuth(
     }),
     extendGraphqlSchema,
     ui: {
-      // Show the UI only for poeple who pass this test
+      // Show the UI only for people who pass this test
       isAccessAllowed: ({ session }) =>
         // console.log(session);
         !!session?.data,
