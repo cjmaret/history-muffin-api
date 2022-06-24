@@ -65,7 +65,7 @@ export const rules = {
       return true; // they can read everything
     }
     // they should only see available products (based on the status field)
-    return { user: { id: session.itemId } };
+    return { user: { id: session.itemId }, status: 'AVAILABLE' };
   },
   canManageUsers({ session }: ListAccessArgs) {
     if (!isSignedIn({ session })) {
