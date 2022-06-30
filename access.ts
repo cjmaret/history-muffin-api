@@ -21,8 +21,6 @@ export const permissions = {
   ...generatedPermissions,
 };
 
-console.log(user);
-
 // Rule based functions
 
 export const rules = {
@@ -63,16 +61,12 @@ export const rules = {
     if (!isSignedIn({ session })) {
       return { status: 'AVAILABLE' };
     }
+
     if (permissions.canManageProducts({ session })) {
       return true; // they can read everything
     }
     // they should only see available products (based on the status field)
-    return {
-      user: { id: session.itemId },
-      product: {
-        status: 'AVAILABLE',
-      },
-    };
+    return { OR: [{ user: { id: session.itemId } }, { status: 'AVAILABLE' }] };
   },
   canManageUsers({ session }: ListAccessArgs) {
     if (!isSignedIn({ session })) {
